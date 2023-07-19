@@ -1,7 +1,11 @@
 function largestNumber(array:number[]) {
     // your code here
-    const sort = array.sort((a,b)=>b-a)
-    return sort[0]
+    if (array.length === 1) {
+      return array[0];
+    }
+  
+    const numberMax:number = largestNumber(array.slice(1));
+    return array[0] > numberMax ? array[0] : numberMax;
   }
   
   
